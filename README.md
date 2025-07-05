@@ -1,7 +1,7 @@
 > ! Tested only on Godot 4.4.1 (Mono)
 
 # ResDB
-Compiles all Resource objects in one display by setting up a directory for it to check:
+A Godot Plugin that compiles all Resource objects in one display.
 1. Press the plus (+) icon at the top left to add a directory you want to scan.
 2. Provide the name and path before confirming.
 3. Once added, the directory will now appear on the left side for easy future access.
