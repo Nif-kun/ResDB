@@ -95,6 +95,7 @@ public partial class DatabasePanel : VBoxContainer {
     }
     
     private void LoadConfig() {
+        DirAccess.MakeDirRecursiveAbsolute("res://addons/ResDB/config");
         const string filePath = "res://addons/ResDB/config/paths.json";
         
         if (!FileAccess.FileExists(filePath)) return;
