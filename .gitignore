@@ -1,3 +1,6 @@
 # Godot 4+ specific ignores
+*.sln
+.idea/
+.idea.*
 .godot/
 /android/
