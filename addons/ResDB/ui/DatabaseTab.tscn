@@ -1,0 +1,237 @@
+[gd_scene load_steps=21 format=3 uid="uid://dafbf5o17bajq"]
+
+[ext_resource type="Script" uid="uid://ct0qn3kp7orti" path="res://addons/ResDB/ui/DatabaseTab.cs" id="1_t540v"]
+[ext_resource type="Texture2D" uid="uid://cas1vh8x45gho" path="res://addons/ResDB/assets/icons/Search.svg" id="2_e8sc0"]
+[ext_resource type="Texture2D" uid="uid://dbgcgukr154lr" path="res://addons/ResDB/assets/icons/HiResIcon.svg" id="2_hycap"]
+[ext_resource type="PackedScene" uid="uid://c7ee1q6pnjglu" path="res://addons/ResDB/ui/AddDatabasePopup.tscn" id="2_t540v"]
+[ext_resource type="Texture2D" uid="uid://cqhr10cx4834s" path="res://addons/ResDB/assets/icons/Add.svg" id="3_28x4m"]
+[ext_resource type="Script" uid="uid://c6rsqjyjywiwq" path="res://addons/ResDB/ui/DatabasePanel.cs" id="3_qjx7a"]
+[ext_resource type="Script" uid="uid://c737r1mg6ohpi" path="res://addons/ResDB/ui/SelectionPanel.cs" id="6_53583"]
+[ext_resource type="Texture2D" uid="uid://gyol0bt8v26c" path="res://addons/ResDB/assets/icons/Reload.svg" id="7_abvsm"]
+[ext_resource type="Texture2D" uid="uid://c188kia6odut3" path="res://addons/ResDB/assets/icons/Compile.svg" id="8_scu1x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wigy1"]
+content_margin_left = 5.0
+content_margin_top = 0.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.12549, 0.12549, 0.12549, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_hycap"]
+variation_embolden = 0.43
+
+[sub_resource type="LabelSettings" id="LabelSettings_80mli"]
+font = SubResource("FontVariation_hycap")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28x4m"]
+content_margin_left = 7.0
+content_margin_top = 2.0
+content_margin_right = 7.0
+content_margin_bottom = 2.0
+bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8sc0"]
+content_margin_left = 7.0
+content_margin_top = 2.0
+content_margin_right = 7.0
+content_margin_bottom = 2.0
+bg_color = Color(0.0941176, 0.0941176, 0.0941176, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80mli"]
+content_margin_left = 0.0
+content_margin_right = 0.0
+bg_color = Color(0.6, 0.6, 0.6, 0.145098)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hycap"]
+content_margin_left = 0.0
+content_margin_right = 0.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjx7a"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.105882, 0.105882, 0.105882, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scu1x"]
+content_margin_left = 0.0
+content_margin_right = 0.0
+bg_color = Color(0.6, 0.6, 0.6, 0.145098)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_me48n"]
+content_margin_left = 0.0
+content_margin_right = 0.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_53583"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.0705882, 0.0705882, 0.0705882, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="DatabaseTab" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wigy1")
+script = ExtResource("1_t540v")
+
+[node name="Frame" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Title" type="HBoxContainer" parent="Frame"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Frame/Title"]
+layout_mode = 2
+texture = ExtResource("2_hycap")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Frame/Title"]
+layout_mode = 2
+text = "ResDB"
+label_settings = SubResource("LabelSettings_80mli")
+vertical_alignment = 1
+
+[node name="Content" type="HBoxContainer" parent="Frame"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 2
+
+[node name="DatabasePanel" type="VBoxContainer" parent="Frame/Content"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/separation = 5
+script = ExtResource("3_qjx7a")
+
+[node name="SearchBar" type="HBoxContainer" parent="Frame/Content/DatabasePanel"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="Frame/Content/DatabasePanel/SearchBar"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxFlat_28x4m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_e8sc0")
+placeholder_text = "Filter: database"
+right_icon = ExtResource("2_e8sc0")
+
+[node name="AddBtn" type="Button" parent="Frame/Content/DatabasePanel/SearchBar"]
+custom_minimum_size = Vector2(0, 27)
+layout_mode = 2
+tooltip_text = "Add Database"
+theme_override_styles/hover = SubResource("StyleBoxFlat_80mli")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hycap")
+icon = ExtResource("3_28x4m")
+icon_alignment = 1
+
+[node name="Databases" type="ScrollContainer" parent="Frame/Content/DatabasePanel"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_qjx7a")
+
+[node name="List" type="VBoxContainer" parent="Frame/Content/DatabasePanel/Databases"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 3
+
+[node name="VSeparator" type="VSeparator" parent="Frame/Content"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2
+
+[node name="SelectionPanel" type="VBoxContainer" parent="Frame/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+script = ExtResource("6_53583")
+
+[node name="TopBar" type="HBoxContainer" parent="Frame/Content/SelectionPanel"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="NameSearch" type="LineEdit" parent="Frame/Content/SelectionPanel/TopBar"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxFlat_28x4m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_e8sc0")
+placeholder_text = "Filter: name"
+right_icon = ExtResource("2_e8sc0")
+
+[node name="TypeSearch" type="LineEdit" parent="Frame/Content/SelectionPanel/TopBar"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxFlat_28x4m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_e8sc0")
+placeholder_text = "Filter: type"
+right_icon = ExtResource("2_e8sc0")
+
+[node name="ReloadBtn" type="Button" parent="Frame/Content/SelectionPanel/TopBar"]
+layout_mode = 2
+tooltip_text = "Reload"
+theme_override_styles/hover = SubResource("StyleBoxFlat_scu1x")
+theme_override_styles/normal = SubResource("StyleBoxFlat_me48n")
+icon = ExtResource("7_abvsm")
+icon_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="Frame/Content/SelectionPanel/TopBar"]
+visible = false
+layout_mode = 2
+
+[node name="CompileBtn" type="Button" parent="Frame/Content/SelectionPanel/TopBar"]
+visible = false
+layout_mode = 2
+tooltip_text = "Compile"
+theme_override_styles/hover = SubResource("StyleBoxFlat_scu1x")
+theme_override_styles/normal = SubResource("StyleBoxFlat_me48n")
+icon = ExtResource("8_scu1x")
+icon_alignment = 1
+
+[node name="SelectionBox" type="ScrollContainer" parent="Frame/Content/SelectionPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_53583")
+
+[node name="PopupRoot" type="CenterContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="AddDatabasePopup" parent="PopupRoot" instance=ExtResource("2_t540v")]
+unique_name_in_owner = true
+layout_mode = 2

@@ -1,0 +1,134 @@
+[gd_scene load_steps=14 format=3 uid="uid://bfswtpnb5nwd4"]
+
+[ext_resource type="Script" uid="uid://dxh6af4nufm0q" path="res://addons/ResDB/ui/DatabaseItemButton.cs" id="1_12j8g"]
+[ext_resource type="Texture2D" uid="uid://chao1o6lvdt7t" path="res://addons/ResDB/assets/icons/Object.svg" id="2_12j8g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qjx7a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trius"]
+bg_color = Color(0.0724689, 0.119507, 0.248343, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.19018, 0.280971, 0.605729, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdrcn"]
+bg_color = Color(0.105882, 0.105882, 0.105882, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.254902, 0.254902, 0.254902, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abvsm"]
+bg_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.139, 0.139, 0.139, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_12j8g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scu1x"]
+bg_color = Color(0.113419, 0.113419, 0.113419, 1)
+draw_center = false
+border_color = Color(0.12549, 0.12549, 0.12549, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_me48n"]
+content_margin_left = 5.0
+
+[sub_resource type="FontVariation" id="FontVariation_hdrcn"]
+variation_embolden = 0.32
+baseline_offset = 0.05
+
+[sub_resource type="LabelSettings" id="LabelSettings_12j8g"]
+line_spacing = 0.0
+font = SubResource("FontVariation_hdrcn")
+font_size = 18
+font_color = Color(0.647059, 0.647059, 0.647059, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hdrcn"]
+content_margin_left = 5.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_nnag4"]
+font_size = 14
+font_color = Color(0.647059, 0.647059, 0.647059, 1)
+
+[node name="DatabaseItemButton" type="Button"]
+custom_minimum_size = Vector2(0, 60)
+size_flags_horizontal = 3
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qjx7a")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_trius")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hdrcn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_trius")
+theme_override_styles/normal = SubResource("StyleBoxFlat_abvsm")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_12j8g")
+script = ExtResource("1_12j8g")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Frame" type="HBoxContainer" parent="Margin"]
+layout_mode = 2
+
+[node name="Icon" type="PanelContainer" parent="Margin/Frame"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_scu1x")
+
+[node name="TextureRect" type="TextureRect" parent="Margin/Frame/Icon"]
+layout_mode = 2
+texture = ExtResource("2_12j8g")
+expand_mode = 1
+
+[node name="Details" type="VBoxContainer" parent="Margin/Frame"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="Margin/Frame/Details"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_styles/normal = SubResource("StyleBoxEmpty_me48n")
+text = "Error"
+label_settings = SubResource("LabelSettings_12j8g")
+vertical_alignment = 2
+text_overrun_behavior = 3
+
+[node name="TypeLabel" type="Label" parent="Margin/Frame/Details"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hdrcn")
+text = "Type: Error"
+label_settings = SubResource("LabelSettings_nnag4")
+text_overrun_behavior = 3
