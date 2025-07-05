@@ -8,3 +8,5 @@ Compiles all Resource objects in one display by setting up a directory for it to
 4. If the directory is populated with Resource files, it will appear in the selection grid.
 5. You may now click the Resource file and modify it in the editor inspection dock.
 6. In the case of deleting the directory, simply click the directory and hover on it to show the delete button.
+
+![](https://github.com/Nif-kun/ResDB/blob/main/screenshots/Sample.png)
